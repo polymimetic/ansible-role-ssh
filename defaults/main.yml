@@ -1,0 +1,24 @@
+---
+# defaults file for ssh
+
+# Build dependencies for packages (will be installed with apt).
+ssh_dependencies:
+  - openssh-server
+
+# Default SSH user
+ssh_user: "{{ ansible_env.USER }}"
+
+# Default SSH home directory
+ssh_home: "{{ ansible_env.HOME }}"
+
+# Default ssh public & private key files.
+ssh_privkey: "{{ ssh_home }}/.ssh/id_rsa"
+ssh_pubkey: "{{ ssh_home }}/.ssh/id_rsa.pub"
+
+# SSH key parameter
+ssh_key_comment: "{{ inventory_hostname }}"
+
+ssh_password_auth: false
+ssh_root_login: false
+ssh_start: true
+ssh_service_enabled: true
